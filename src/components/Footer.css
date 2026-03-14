@@ -1,6 +1,6 @@
 .footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
+  background: #F0E5CF;
+  border-top: 1px solid rgba(198,179,119,0.25);
   padding-top: 64px;
 }
 
@@ -11,26 +11,48 @@
   padding-bottom: 48px;
 }
 
+/* ─── BRAND ─── */
+.footer-brand .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  /* color: #18211E; */
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-brand .footer-logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* filter: brightness(0) saturate(100%); */
+}
+
 .footer-brand p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  margin-top: 16px;
+  font-family: 'Jost', sans-serif;
+  color: #5a6b5c;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  font-weight: 300;
   max-width: 300px;
 }
 
+/* ─── LINKS ─── */
 .footer-links {
   display: flex;
   gap: 60px;
 }
 
 .footer-col-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text);
+  letter-spacing: 0.18em;
+  color: #18211E;
   margin-bottom: 20px;
 }
 
@@ -42,19 +64,37 @@
 }
 
 .footer-col ul li a {
-  color: var(--text-muted);
+  font-family: 'Jost', sans-serif;
+  color: #6b7d6c;
   text-decoration: none;
-  font-size: 0.88rem;
-  transition: color 0.3s;
+  font-size: 0.875rem;
+  font-weight: 400;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.footer-col ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: #8a6720;
+  transition: width 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-  color: var(--accent);
+  color: #8a6720;
 }
 
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* ─── BOTTOM BAR ─── */
 .footer-bottom {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(198,179,119,0.25);
   padding: 20px 0;
+  background: #e8dbbf;
 }
 
 .footer-bottom .container {
@@ -66,11 +106,15 @@
 }
 
 .footer-bottom p {
-  color: var(--text-muted);
-  font-size: 0.82rem;
+  font-family: 'Jost', sans-serif;
+  color: #7a8a7b;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 @media (max-width: 768px) {
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-links { gap: 40px; }
+  .footer-bottom .container { justify-content: center; text-align: center; }
 }

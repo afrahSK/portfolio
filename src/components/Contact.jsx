@@ -1,6 +1,40 @@
 import { useState } from 'react'
 import './Contact.css'
 
+const infoItems = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    ),
+    label: 'Email',
+    value: 'your@email.com',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+    label: 'Response Time',
+    value: 'Within 24 hours',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
+    label: 'Availability',
+    value: 'Worldwide (Remote)',
+  },
+]
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', service: '', message: '' })
   const [sent, setSent] = useState(false)
@@ -9,7 +43,6 @@ export default function Contact() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // Connect to your email service (EmailJS, Formspree, etc.)
     console.log('Form submitted:', form)
     setSent(true)
   }
@@ -18,19 +51,16 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="contact-wrapper">
+
           <div className="contact-left">
             <p className="section-label">Get In Touch</p>
             <h2 className="section-title">Let's Build Something Great Together</h2>
             <p className="section-subtitle">
-              Have a project in mind? Fill out the form and I'll get back to you within 24 hours.
+              Have a project in mind? Fill out the form and we'll get back to you within 24 hours.
             </p>
 
             <div className="contact-info">
-              {[
-                { icon: '📧', label: 'Email', value: 'your@email.com' },
-                { icon: '💬', label: 'Response Time', value: 'Within 24 hours' },
-                { icon: '🌍', label: 'Availability', value: 'Worldwide (Remote)' },
-              ].map(item => (
+              {infoItems.map(item => (
                 <div className="info-item" key={item.label}>
                   <span className="info-icon">{item.icon}</span>
                   <div>
@@ -45,9 +75,9 @@ export default function Contact() {
           <div className="contact-form-wrapper">
             {sent ? (
               <div className="success-msg">
-                <span>✅</span>
+                <span>✦</span>
                 <h3>Message Sent!</h3>
-                <p>Thanks for reaching out. I'll reply within 24 hours.</p>
+                <p>Thanks for reaching out. We'll reply within 24 hours.</p>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -77,7 +107,7 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label>Tell Me About Your Project</label>
+                  <label>Tell Us About Your Project</label>
                   <textarea name="message" placeholder="Describe your project, timeline, budget..." rows="5" value={form.message} onChange={handleChange} required />
                 </div>
 
@@ -90,6 +120,7 @@ export default function Contact() {
               </form>
             )}
           </div>
+
         </div>
       </div>
     </section>

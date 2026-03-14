@@ -3,9 +3,12 @@ import './Hero.css'
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      {/* Background orbs */}
+      {/* Organic blob shapes */}
       <div className="orb orb-1"></div>
       <div className="orb orb-2"></div>
+
+      {/* Decorative vertical line */}
+      <div className="hero-line"></div>
 
       <div className="container hero-inner">
         <div className="hero-badge">
@@ -14,20 +17,20 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title">
-          I Build <span className="accent-text">Digital Experiences</span>{' '}
+          We Build <span className="accent-text">Digital Experiences</span>{' '}
           That Convert
         </h1>
 
         <p className="hero-subtitle">
           Full-stack freelancer specializing in business websites, landing pages,
-          UI/UX design & REST APIs. I turn your vision into fast, beautiful,
+          UI/UX design & REST APIs. We turn your vision into fast, beautiful,
           revenue-generating products.
         </p>
 
         <div className="hero-actions">
           <a href="#services" className="btn-primary">
             Explore Services
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
@@ -48,11 +51,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="scroll-hint">
-        <div className="scroll-line"></div>
-        <span>Scroll</span>
-      </div>
+      
     </section>
   )
 }

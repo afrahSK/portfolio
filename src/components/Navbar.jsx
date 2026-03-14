@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
-
+import logo from '../assets/logo.png'
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner container">
         <a href="#" className="nav-logo">
-          &lt;YourName /&gt;
+          <img src={logo}/>
         </a>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -30,7 +30,7 @@ export default function Navbar() {
           ))}
           <li>
             <a href="#contact" className="btn-primary nav-cta" onClick={() => setMenuOpen(false)}>
-              Hire Me
+              Got a Project?
             </a>
           </li>
         </ul>

@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Jost:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --bg: #0A0A0F;
-  --surface: #111118;
-  --surface2: #1A1A28;
-  --accent: #00F5D4;
-  --accent2: #7B61FF;
-  --text: #E8E8F0;
-  --text-muted: #8888A8;
-  --border: rgba(255,255,255,0.07);
-  --glow: 0 0 40px rgba(0, 245, 212, 0.15);
+  --bg: #18211E;
+  --surface: #212121;
+  --surface2: #3B342C;
+  --accent: #C6B377;
+  --accent2: #4B5A4C;
+  --text: #F0E5CF;
+  --text-muted: #8E9E8F;
+  --border: rgba(198, 179, 119, 0.12);
+  --glow: 0 0 40px rgba(198, 179, 119, 0.12);
   --radius: 16px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -25,7 +27,7 @@ section {
 
 /* ─── TYPOGRAPHY ─────────────────────── */
 .section-label {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -35,7 +37,7 @@ section {
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.15;
@@ -44,6 +46,7 @@ section {
 }
 
 .section-subtitle {
+  font-family: 'Jost', sans-serif;
   font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.75;
@@ -57,8 +60,8 @@ section {
   gap: 10px;
   padding: 14px 32px;
   background: var(--accent);
-  color: #0A0A0F;
-  font-family: 'DM Sans', sans-serif;
+  color: #18211E;
+  font-family: 'Jost', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   border: none;
@@ -66,13 +69,13 @@ section {
   cursor: pointer;
   text-decoration: none;
   transition: var(--transition);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 .btn-primary:hover {
-  background: #fff;
+  background: var(--text);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 245, 212, 0.35);
+  box-shadow: 0 12px 40px rgba(198, 179, 119, 0.3);
 }
 
 .btn-outline {
@@ -82,7 +85,7 @@ section {
   padding: 13px 30px;
   background: transparent;
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   border: 1px solid var(--border);
@@ -108,7 +111,7 @@ section {
 }
 
 .card:hover {
-  border-color: rgba(0, 245, 212, 0.3);
+  border-color: rgba(198, 179, 119, 0.3);
   transform: translateY(-4px);
   box-shadow: var(--glow);
 }
@@ -125,8 +128,8 @@ section {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(0,245,212,0.2); }
-  50%       { box-shadow: 0 0 50px rgba(0,245,212,0.5); }
+  0%, 100% { box-shadow: 0 0 20px rgba(198, 179, 119, 0.2); }
+  50%       { box-shadow: 0 0 50px rgba(198, 179, 119, 0.45); }
 }
 
 .fade-up {
