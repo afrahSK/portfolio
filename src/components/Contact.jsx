@@ -10,7 +10,7 @@ const infoItems = [
       </svg>
     ),
     label: 'Email',
-    value: 'your@email.com',
+    value: 'karatelaafrah0@gmail.com patelkrupa@gmail.com',
   },
   {
     icon: (
